@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 import { LINKS } from '../../data/portfolio'
 
 export default function Contact() {
@@ -21,13 +21,22 @@ export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-wrapper fade-up" ref={ref}>
-        <h3>Let's Connect</h3>
+        <span className="hero-badge">✦ Let's Talk</span>
+        <h3>Get In Touch</h3>
         <p>
-          I am always interested in discussing data science, machine learning, 
-          and innovative computational tools. Feel free to connect.
+          I am always interested in discussing data science, software engineering, 
+          and innovative project collaborations. Feel free to connect directly.
         </p>
         
         <div className="contact-links">
+          <a href={`mailto:${LINKS.email}`} className="contact-link">
+            <FaEnvelope className="icon" />
+            {LINKS.email}
+          </a>
+          <a href={`tel:${LINKS.phone}`} className="contact-link">
+            <FaPhone className="icon" />
+            {LINKS.phone}
+          </a>
           <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="contact-link">
             <FaLinkedin className="icon" />
             LinkedIn
